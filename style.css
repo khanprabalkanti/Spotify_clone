@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000;
+    font-family: Circular, Helvetica, Arial, sans-serif;
+    ;
+}
+
+.left {
+    width: 20vw;
+    background-color: #121212;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.right {
+    width: 80vw;
+    background-color: #1f1f1f;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.navbar {
+    
+}
+
+.install-capsule a {
+    text-decoration: none;
+
+}
+
+.home {
+    background-color: #1f1f1f;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 27.5rem;
+}
+
+.logo {
+    margin-left: 28px;
+    margin-top: 4px;
+}
+
+.explore-capsule {
+    color: rgb(14, 14, 14);
+    width: 8.125rem;
+    height: 1.5625rem;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 4rem;
+}
+
+.explore-capsule span {
+    font-size: 0.8rem;
+    font-weight: bolder;
+}
+
+.search-container {
+    background-color: #1f1f1f;
+    width: 27rem;
+    height: 3rem;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-top: 10px;
+    margin-left: 0.625rem;
+}
+
+.search-container input {
+    background-color: #1f1f1f;
+    width: 25vw;
+    text-decoration: none;
+    outline: none;
+    border-bottom: none;
+    box-shadow: none;
+    color: whitesmoke;
+    font-size: medium;
+    position: relative;
+    height: 2rem;
+    margin-left: 10px;
+}
+
+.cross {
+    position: relative;
+    right: 40px;
+}
+
+.install-capsule a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5b5b5b;
+    margin-left: 1.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+.install-capsule{
+    margin-top: 10px;
+    margin-left: 1rem;
+}
+.install-icon {
+    color: #5b5b5b;
+    width: 16px;
+    height: 16px;
+}
+.notification{
+    margin-left: 2.8rem;
+}
+.notification-icon {
+    width: 16px;
+    margin-top: 10px;
+}
+.member{
+   margin-left: 1.5rem;
+}
+.member-icon {
+    width: 16px;
+    margin-top: 10px;
+}
+
+.login {
+    background-color: #1f1f1f;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    margin-top: 10px;
+    margin-left: 1.5rem;
+}
+.login-div{
+    background-color: #ba387b;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+}
+.liabrary span{
+    font-weight: 700;
+    font-size: medium;
+}
+.create{
+    width: 100px;
+    background-color: #1f1f1f;
+    border-radius: 25px;
+    padding: 8px 10px;
+    border: none; 
+}
+.create span{
+     font-weight: 700;
+    font-size: medium;
+}

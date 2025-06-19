@@ -1,0 +1,35 @@
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+.justify-space-arround{
+    justify-content: space-around;
+}
+.justify-space-evenly{
+    justify-content: space-evenly;
+}
+.invert {
+    filter: invert(1);
+}
+
+.svg-size {
+    width: 24px;
+}
+.svg-size14{
+     width: 14px;
+}
+.transparent {
+    background-color: transparent;
+    border: none;
+}
