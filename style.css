@@ -154,3 +154,96 @@ body {
     margin: 10px;
     border-radius: 20px;
 }
+.top-left-box{
+    width: 20vw;
+}
+.playlist-capsule{
+    
+}
+/* ========== Responsive Styles ========== */
+@media (max-width: 1200px) {
+    .home {
+        margin-left: 10rem;
+    }
+
+    .search-container {
+        width: 22rem;
+    }
+
+    .explore-capsule {
+        margin-left: 1rem;
+    }
+
+    .install-capsule a {
+        font-size: 0.7rem;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .search-container {
+        width: 18rem;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .body {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container input {
+        width: 60%;
+    }
+
+    .explore-capsule,
+    .install-capsule,
+    .notification,
+    .member {
+        display: none;
+    }
+
+    .login {
+        margin-left: 0;
+    }
+
+    .svg-size {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        width: 90%;
+        margin-left: 0;
+    }
+
+    .logo,
+    .home {
+        margin-left: 0;
+    }
+
+    .top-left-box {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .create {
+        width: 100%;
+        justify-content: center;
+    }
+}
