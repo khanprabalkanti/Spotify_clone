@@ -35,7 +35,7 @@ body {
 .explore-capsule {
     color: rgb(14, 14, 14);
     width: 8.125rem;
-    height: 1.5625rem;
+    height: 2rem;
     border-radius: 20px;
     background-color: white;
     margin-top: 10px;
@@ -146,6 +146,7 @@ body {
     margin: 10px;
     border-radius: 10px;
     padding: 15px;
+    height: 80vh;
 }
 
 .right {
@@ -158,8 +159,28 @@ body {
     width: 20vw;
 }
 .playlist-capsule{
-    
+    display: block;
+    color: white;
+    padding: 10px;
 }
+.create-playlist{
+    color: rgb(14, 14, 14);
+    width: 8.125rem;
+    height: 2rem;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;
+    margin-top: 10px;
+    border: none;
+    font-weight: bold;
+}
+.playlist-capsule {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ← This aligns child elements (h3 + button) to the left */
+    gap: 10px; /* Optional: adds spacing between h3 and button */
+}
+
 /* ========== Responsive Styles ========== */
 @media (max-width: 1200px) {
     .home {
