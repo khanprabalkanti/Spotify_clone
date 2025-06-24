@@ -9,9 +9,6 @@ body {
     ;
 }
 
-.navbar {
-    
-}
 
 .install-capsule a {
     text-decoration: none;
@@ -20,11 +17,11 @@ body {
 
 .home {
     background-color: #1f1f1f;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 3.125em;
+    height: 3.125em;
+    border-radius: 3.125em;
     margin-top: 10px;
-    margin-left: 27.5rem;
+
 }
 
 .logo {
@@ -34,27 +31,29 @@ body {
 
 .explore-capsule {
     color: rgb(14, 14, 14);
-    width: 8.125rem;
-    height: 2rem;
+    width: 130px;
+    height: 32px;
     border-radius: 20px;
     background-color: white;
     margin-top: 10px;
-    margin-left: 4rem;
+    margin-left: 64px;
 }
 
 .explore-capsule span {
-    font-size: 0.8rem;
+    font-size: 12.8px;
     font-weight: bolder;
 }
 
 .search-container {
     background-color: #1f1f1f;
-    width: 27rem;
-    height: 3rem;
+    width: 432px;
+    height: 48px;
     border-radius: 25px;
     padding: 0 15px;
     margin-top: 10px;
-    margin-left: 0.625rem;
+    margin-left: 10px;
+    flex-grow: 1;
+    max-width: 450px;
 }
 
 .search-container input {
@@ -67,7 +66,7 @@ body {
     color: whitesmoke;
     font-size: medium;
     position: relative;
-    height: 2rem;
+    height: 32px;
     margin-left: 10px;
 }
 
@@ -82,29 +81,35 @@ body {
     align-items: center;
     gap: 8px;
     color: #5b5b5b;
-    margin-left: 1.5rem;
+    margin-left: 24px;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 12.8px;
 }
-.install-capsule{
+
+.install-capsule {
     margin-top: 10px;
-    margin-left: 1rem;
+    margin-left: 16px;
 }
+
 .install-icon {
     color: #5b5b5b;
     width: 16px;
     height: 16px;
 }
-.notification{
-    margin-left: 2.8rem;
+
+.notification {
+    margin-left: 44.8px;
 }
+
 .notification-icon {
     width: 16px;
     margin-top: 10px;
 }
-.member{
-   margin-left: 1.5rem;
+
+.member {
+    margin-left: 24px;
 }
+
 .member-icon {
     width: 16px;
     margin-top: 10px;
@@ -117,154 +122,144 @@ body {
     border-radius: 50px;
     border: none;
     margin-top: 10px;
-    margin-left: 1.5rem;
+    margin-left: 24px;
 }
-.login-div{
+
+.login-div {
     background-color: #ba387b;
     width: 33px;
     height: 33px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
-.liabrary span{
+
+.liabrary span {
     font-weight: 700;
     font-size: medium;
 }
-.create{
+
+.create {
     width: 100px;
     background-color: #1f1f1f;
     border-radius: 25px;
     padding: 8px 10px;
-    border: none; 
+    border: none;
+    margin-right: 10px;
+    margin-top: 5px;
 }
-.create span{
-     font-weight: 700;
+
+.create span {
+    font-weight: 700;
     font-size: medium;
+
 }
+
 .left {
-    width: 20vw;
+    width: 25vw;
     background-color: #121212;
     margin: 10px;
-    border-radius: 10px;
-    padding: 15px;
-    height: 80vh;
+    border-radius: 7px;
+    padding: 5px;
+    height: 75vh;
 }
 
 .right {
-    width: 80vw;
-    background-color: #1f1f1f;
+    width: 76vw;
+    flex-direction: column;
     margin: 10px;
-    border-radius: 20px;
+    border-radius: 7px;
+    height: 76vh;
+    background: linear-gradient(to bottom, #1f1f1f, #000000);
 }
-.top-left-box{
-    width: 20vw;
-}
-.playlist-capsule{
-    display: block;
-    color: white;
-    padding: 10px;
-}
-.create-playlist{
+
+.create-playlist {
     color: rgb(14, 14, 14);
-    width: 8.125rem;
-    height: 2rem;
+    width: 130px;
+    height: 32px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+.create-playlist span {
+    font-weight: bolder;
+}
+
+.playlist-capsule {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #1f1f1f;
+    color: white;
+    margin: 30px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.podcast-capsule {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #1f1f1f;
+    color: white;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.podcast-playlist {
+    color: rgb(14, 14, 14);
+    width: auto;
+    height: 32px;
     border-radius: 20px;
     background-color: white;
     margin-top: 10px;
     margin-top: 10px;
     border: none;
     font-weight: bold;
+    padding: 0 14px;
 }
-.playlist-capsule {
+
+.podcast-playlist span {
+    font-weight: bolder;
+}
+
+.right-body-nav {
+    width: 100% em;
+    gap: 20px;
+    padding: 15px 35px;
+   background-color: red;
+   height: 30px;
+   
+}
+
+.content-capsule {
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    background-color: #3f3f3f;
+    color: #fbfbfb;
+    border: none;
+    height: 35px;
+}
+.music-categories-nav{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* ← This aligns child elements (h3 + button) to the left */
-    gap: 10px; /* Optional: adds spacing between h3 and button */
+    justify-content: space-between;
+    width: 100% em;
+    background-color: green;
+    padding: 20px 35px;
 }
-
-/* ========== Responsive Styles ========== */
-@media (max-width: 1200px) {
-    .home {
-        margin-left: 10rem;
-    }
-
-    .search-container {
-        width: 22rem;
-    }
-
-    .explore-capsule {
-        margin-left: 1rem;
-    }
-
-    .install-capsule a {
-        font-size: 0.7rem;
-        gap: 5px;
-    }
+.music-card-container{
+    font-size: ;
 }
-
-@media (max-width: 992px) {
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .search-container {
-        width: 18rem;
-    }
-
-    .left {
-        width: 100%;
-    }
-
-    .right {
-        width: 100%;
-    }
-
-    .body {
-        flex-direction: column;
-        padding: 0 10px;
-    }
+.music-category{
+    font-size: x-large;
+    font-weight: bold;
 }
-
-@media (max-width: 768px) {
-    .search-container input {
-        width: 60%;
-    }
-
-    .explore-capsule,
-    .install-capsule,
-    .notification,
-    .member {
-        display: none;
-    }
-
-    .login {
-        margin-left: 0;
-    }
-
-    .svg-size {
-        width: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .search-container {
-        width: 90%;
-        margin-left: 0;
-    }
-
-    .logo,
-    .home {
-        margin-left: 0;
-    }
-
-    .top-left-box {
-        flex-direction: column;
-        align-items: start;
-    }
-
-    .create {
-        width: 100%;
-        justify-content: center;
-    }
+.show-all{
+    font-weight: bold;
+    color: #5b5b5b;
 }

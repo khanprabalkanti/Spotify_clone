@@ -11,66 +11,93 @@
 
 <body>
     <div class="container">
-        <div class="navbar">
-            <nav class="nav flex item-center">
-                <div class="logo flex justify-center item-center">
-                    <img class="logo-img invert" src="logo.svg" alt="Image">
-                </div>
-                <div class="home flex justify-center item-center">
-                    <img class="invert svg-size" src="home.svg" alt="Home Image">
-                </div>
-                <div class="search-container flex justify-space-evenly item-center">
-                    <img class="invert svg-size" src="search.svg" alt="Search Img">
-                    <input type="search" placeholder="What do you want to play?">
-                    <button class="cross transparent">
-                        <img class="invert svg-size" src="cross.svg" alt="cross">
-                    </button>
-                    <button class="browse-button transparent">
-                        <img class="svg-size invert " src="browse.svg" alt="Browse">
-                    </button>
-                </div>
-                <div class="explore-capsule flex justify-center item-center">
-                    <span>Explore Premium</span>
-                </div>
-                <button class="install-capsule transparent">
-                    <a class="transparent invert flex justify-center item-center" href="download">
-                        <img class="svg-size install-icon" src="install.svg" alt="Install">
-                        <span class="install-text tran">Install App</span>
-                    </a>
+        <nav class="nav flex item-center justify-space-between">
+            <div class="logo flex justify-center item-center">
+                <img class="logo-img invert" src="logo.svg" alt="Image">
+            </div>
+            <div class="home flex justify-center item-center">
+                <img class="invert svg-size" src="home.svg" alt="Home Image">
+            </div>
+            <div class="search-container flex justify-space-evenly item-center">
+                <img class="invert svg-size" src="search.svg" alt="Search Img">
+                <input type="search" placeholder="What do you want to play?">
+                <button class="cross transparent">
+                    <img class="invert svg-size" src="cross.svg" alt="cross">
                 </button>
-                <div class="notification">
-                    <img class="invert notification-icon" src="notification.svg" alt="Notification">
-                </div>
-                <button class="member transparent">
-                    <img class="member-icon invert" src="member.svg" alt="Image">
+                <button class="browse-button transparent">
+                    <img class="svg-size invert " src="browse.svg" alt="Browse">
                 </button>
-                <button class="login flex justify-center item-center">
-                    <div class="login-div flex justify-center item-center">P</div>
-                </button>
+            </div>
+            <div class="explore-capsule flex justify-center item-center">
+                <span>Explore Premium</span>
+            </div>
+            <button class="install-capsule transparent">
+                <a class="transparent invert flex justify-center item-center" href="download">
+                    <img class="svg-size install-icon" src="install.svg" alt="Install">
+                    <span class="install-text tran">Install App</span>
+                </a>
+            </button>
+            <div class="notification">
+                <img class="invert notification-icon" src="notification.svg" alt="Notification">
+            </div>
+            <button class="member transparent">
+                <img class="member-icon invert" src="member.svg" alt="Image">
+            </button>
+            <button class="login flex justify-center item-center">
+                <div class="login-div flex justify-center item-center">P</div>
+            </button>
 
-            </nav>
-        </div>
+        </nav>
+
         <div class="body flex justify-center item-center">
             <div class="left ">
                 <div class="top-left-box flex justify-space-between item-center">
-                    <button class="liabrary transparent flex justify-center item-center">
+                    <button class="liabrary transparent">
                         <img class="invert svg-size14" src="liabrary.svg" alt="image">
                         <span class="invert">Your Liabrary</span>
                     </button>
-                    <button class="create flex justify-space-arround item-center">
+                    <button class="create flex justify-space-evenly item-center">
                         <img class="invert svg-size14" src="create.svg" alt="image">
                         <span class="invert">Create</span>
                     </button>
                 </div>
                 <div class="playlist-capsule">
-                    <h3>Create Your First Playlist</h3>
+                    <h4>Create Your First Playlist</h4>
+                    <p>It's easy, we'll help you</p>
                     <button class="create-playlist">
                         <span class="">Create Playlist</span>
                     </button>
                 </div>
+                <div class="podcast-capsule">
+                    <h4>Let's find some podcast to follow</h4>
+                    <p>We'll keep you updated on new episodes</p>
+                    <button class="podcast-playlist">
+                        <span class="">Browse podcast</span>
+                    </button>
+                </div>
             </div>
-            <div class="right">
-                shjkg
+            <div class="right flex">
+                <div class="right-body-nav flex ">
+                    <button class="content-capsule ">
+                        <span class="">All</span>
+                    </button>
+                    <button class="content-capsule ">
+                        <span class="">Music</span>
+                    </button>
+                    <button class="content-capsule ">
+                        <span class="">Podcast</span>
+                    </button>
+                </div>
+                <div class="music-card-container ">
+                    <div class="music-categories-nav">
+                        <button class="music-category">
+                            Charts
+                        </button>
+                        <button class="show-all invert transparent">
+                            Show all
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
