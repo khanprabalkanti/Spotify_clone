@@ -231,9 +231,9 @@ body {
     width: 100% em;
     gap: 20px;
     padding: 15px 35px;
-   background-color: red;
-   height: 30px;
-   
+
+    height: 30px;
+
 }
 
 .content-capsule {
@@ -245,21 +245,71 @@ body {
     border: none;
     height: 35px;
 }
-.music-categories-nav{
+
+.charts-section {
+    display: flex;
+    flex-direction: column; 
+}
+
+.music-nav {
     display: flex;
     justify-content: space-between;
     width: 100% em;
-    background-color: green;
     padding: 20px 35px;
 }
-.music-card-container{
-    font-size: ;
+.card-container{
+    padding: 0 30px;
+    width: 100% em;
 }
-.music-category{
+.music-category {
     font-size: x-large;
     font-weight: bold;
 }
-.show-all{
+
+.show-all {
     font-weight: bold;
     color: #5b5b5b;
+}
+.card{
+    width: 180px;
+    position: relative;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+    
+    
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+     border-radius: 10px;
+}
+.card p{
+    font-size: small;
+    color: #5b5b5b;
+}
+.card:hover{
+    background-color: #171717;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.play-btn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #2ace63;
+    padding: 12px;
+    border: none;
+    right: 10px;
+   
+  bottom: 60px;
+  left: 65%;
+}
+
+.play-btn img{
+    width: 24px;
+    height: 24px;
+   
 }
