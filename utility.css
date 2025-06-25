@@ -37,3 +37,14 @@
 .pointer:hover{
     cursor: pointer;
 }
+.font-small{
+    font-size: small;
+}
+.scale-up:hover{
+    transform: scale(1.1);
+     
+}
+.smooth-scale{
+    transition: transform 0.2s ease;
+    
+}
