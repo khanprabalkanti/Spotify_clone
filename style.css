@@ -168,7 +168,7 @@ body {
     margin: 10px;
     border-radius: 7px;
     height: 76vh;
-    background: linear-gradient(to bottom, #1f1f1f, #000000);
+    background: linear-gradient(to bottom, #1f1f1f, #090909);
 }
 
 .create-playlist {
@@ -231,7 +231,6 @@ body {
     width: 100% em;
     gap: 20px;
     padding: 15px 35px;
-
     height: 30px;
 
 }
@@ -270,14 +269,7 @@ body {
     font-weight: bold;
     color: #5b5b5b;
 }
-.card{
-    width: 180px;
-    position: relative;
-    padding: 10px;
-    transition: background-color 0.2s ease;
-    
-    
-}
+
 .card img{
     width: 100%;
     object-fit: contain;
@@ -303,13 +295,40 @@ body {
     padding: 12px;
     border: none;
     right: 10px;
-   
   bottom: 60px;
   left: 65%;
+  opacity: 0;
+  transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    
 }
 
 .play-btn img{
     width: 24px;
     height: 24px;
    
+}
+.card:hover .play-btn {
+  opacity: 1;
+  transform: translateY(0); /* slide up */
+    pointer-events: auto;
+}
+.play-btn:hover{
+    cursor: pointer;
+}
+
+.card{
+    width: 180px;
+    position: relative;
+    padding: 10px;
+    
+   
+}
+.music-container {
+    height: calc(100vh - 100px); 
+    overflow-y: auto;
+    overflow-x: ;
+    padding-right: 10px; 
+    scroll-behavior: smooth;
 }

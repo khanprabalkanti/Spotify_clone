@@ -33,3 +33,7 @@
     background-color: transparent;
     border: none;
 }
+
+.pointer:hover{
+    cursor: pointer;
+}
