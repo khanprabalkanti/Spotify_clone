@@ -206,7 +206,18 @@ nav{
     list-style-type: none;
    
 }
+.songLists li{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.songLists li img{
+    width: 30px;
 
+
+}
 .right {
     width: 76vw;
     flex-direction: column;
