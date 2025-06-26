@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const ul = document.createElement("ul");
             ul.classList.add("songLists");
             ul.innerHTML=songs.map(song => {
-                const fileName = song.split("/").pop();
-                return `<li class="invert pointer">${fileName.replaceAll("%20", " ")}</li>`;
+                const fileName = song.split("/").pop().replaceAll(".mp3", " ").replaceAll("%20"," ").replaceAll("(webmusic.in)_", "").replaceAll(/\d+/g, " ").replaceAll(".", "");               
+                return `<li class="invert pointer"> <img src="./music.svg" alt="">${fileName}</li>`;
             }).join("");
 
             leftSideBar.appendChild(ul);
