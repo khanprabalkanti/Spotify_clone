@@ -1,10 +1,11 @@
 async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/");
-    let response = await a.text();
-    let div = document.createElement("div");
+    const a = await fetch("http://127.0.0.1:3000/songs/");
+    const response = await a.text();
+    const div = document.createElement("div");
     div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    let songs = [];
+    const as = div.getElementsByTagName("a");
+
+    const songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
@@ -14,12 +15,33 @@ async function getSongs() {
     return songs;
 }
 
-// Global variables
+
 let currentSongUrl = null;
 let isPlaying = false;
 let currentIndex = -1;
 let songsList = [];
 window.audioPlayer = new Audio();
+
+function formatSongName(song) {
+    return song
+        .split("/").pop()
+        .replace(".mp3", "")
+        .replaceAll("%20", " ")
+        .replaceAll("(webmusic.in)_", "")
+        .replaceAll(/\d+/g, "")
+        .replaceAll(".", " ")
+        .trim();
+}
+
+function updateFooter(songName) {
+    const footerCover = document.querySelector(".footer-cover");
+    const footerTitle = document.querySelector(".footer-title");
+    const footerMeta = document.querySelector(".footer-meta");
+
+    footerCover.src = "./music.svg";
+    footerTitle.textContent = songName;
+    footerMeta.textContent = "Album: Unknown";
+}
 
 function playSongAt(index) {
     if (index < 0 || index >= songsList.length) return;
@@ -39,6 +61,9 @@ function playSongAt(index) {
 
     const playPauseImg = document.querySelector(".play-pause img");
     playPauseImg.src = "pause.svg";
+
+
+    updateFooter(formatSongName(songUrl));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,8 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.querySelector(".play-previous");
     const libraryBtn = document.querySelector(".liabrary");
     const leftSideBar = document.querySelector(".create-container");
+    const suffleBtn = document.querySelector(".suffle");
 
-    // Initially disable play button
+
     playPauseBtn.classList.add("disabled");
 
     playPauseBtn.addEventListener("click", () => {
@@ -76,6 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    suffleBtn.addEventListener("click", () => {
+        if (songsList.length === 0) return;
+        const randomIndex = Math.floor(Math.random() * songsList.length);
+        playSongAt(randomIndex);
+        playPauseBtn.classList.remove("disabled");
+    });
+
     libraryBtn.addEventListener("click", async () => {
         document.querySelector(".playlist-capsule")?.remove();
         document.querySelector(".podcast-capsule")?.remove();
@@ -90,18 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
             songs.forEach((song, index) => {
                 const li = document.createElement("li");
                 li.classList.add("invert", "pointer", "song-item");
-                li.style = "display: flex; align-items: center; gap: 12px; margin: 10px 0;";
+                li.style = "display: flex; align-items: center; gap: 12px; margin: 10px 0; ";
 
                 const coverImg = document.createElement("img");
                 coverImg.src = "./music.svg";
                 coverImg.style = "width: 50px; height: 50px; object-fit: cover;";
 
-                let songName = song.split("/").pop().replace(".mp3", "")
-                    .replaceAll("%20", " ")
-                    .replaceAll("(webmusic.in)_", "")
-                    .replaceAll(/\d+/g, "")
-                    .replaceAll(".", " ")
-                    .trim();
+                const songName = formatSongName(song);
 
                 const textInfo = document.createElement("div");
                 textInfo.innerHTML = `
@@ -125,4 +153,18 @@ document.addEventListener("DOMContentLoaded", () => {
             leftSideBar.appendChild(ul);
         }
     });
+});
+window.audioPlayer.addEventListener("ended", () => {
+    if (currentIndex < songsList.length - 1) {
+        playSongAt(currentIndex + 1);
+    } else {
+        console.log("End of playlist");
+        currentIndex = -1;
+        currentSongUrl = null;
+
+        const playPauseImg = document.querySelector(".play-pause img");
+        playPauseImg.src = "play.svg";
+
+        updateFooter("No song playing");
+    }
 });

@@ -48,3 +48,6 @@
     transition: transform 0.2s ease;
     
 }
+.disabled{
+    background-color:#5b5b5b;
+}

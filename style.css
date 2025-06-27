@@ -138,7 +138,7 @@ nav{
     border-radius: 50px;
     border: none;
     margin-top: 10px;
-    margin-left: 24px;
+    margin-right: 10px;
 }
 
 .login-div {
@@ -151,11 +151,11 @@ nav{
 .Your-Library {
     font-weight: 700;
     font-size: medium;
-    transform: translateX(-10px);       /* Start off to the left */
+    transform: translateX(-10px);       
   transition: transform 0.4s ease;
 }
 .Your-Library:hover {
-  transform: translateX(0); /* Final position */
+  transform: translateX(0); 
 }
 
 .create {
@@ -191,14 +191,14 @@ nav{
 
 .liabrary:hover .liabrary-svg {
   opacity: 1;
-  transform: translateX(0);           /* Move to original position */
+  transform: translateX(0);           
 }
 .create-container{
     height: 72vh;
     overflow-y: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;     /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;     
+  -ms-overflow-style: none;  
   overflow-y: scroll;   
 }
 .songLists{
@@ -410,8 +410,8 @@ z-index: 10;
     overflow-y: auto;
     padding-right: 10px;
     scroll-behavior: smooth;
-    scrollbar-width: none;     /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;     
+  -ms-overflow-style: none;  
   overflow-y: scroll;
 }
 .footer{
@@ -421,6 +421,19 @@ z-index: 10;
     justify-content: flex-end;
     gap: 5vw;
    
+}
+.footerLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    
+    width: 360px;
+}
+.footer-cover{
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover;
 }
 .play-section{
     width: 40vw;
@@ -472,4 +485,9 @@ z-index: 10;
     width: 110px;
     height: 3px;
     background-color: #5b5b5b;
+}
+.song-item{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
