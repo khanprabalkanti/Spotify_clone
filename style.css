@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 body {
@@ -10,7 +10,8 @@ body {
     font-family: Circular, Helvetica, Arial, sans-serif;
     ;
 }
-nav{
+
+nav {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -44,7 +45,7 @@ nav{
     background-color: white;
     margin-top: 10px;
     margin-left: 64px;
-    
+
 }
 
 .explore-capsule span {
@@ -79,7 +80,7 @@ nav{
     outline: none;
     border-bottom: none;
     box-shadow: none;
-    color: whitesmoke; 
+    color: whitesmoke;
     font-size: medium;
     position: relative;
     height: 32px;
@@ -151,11 +152,12 @@ nav{
 .Your-Library {
     font-weight: 700;
     font-size: medium;
-    transform: translateX(-10px);       
-  transition: transform 0.4s ease;
+    transform: translateX(-10px);
+    transition: transform 0.4s ease;
 }
+
 .Your-Library:hover {
-  transform: translateX(0); 
+    transform: translateX(0);
 }
 
 .create {
@@ -183,41 +185,46 @@ nav{
     height: 80vh;
 }
 
-.liabrary-svg{
+.liabrary-svg {
     opacity: 0;
-    transform: translateX(-10px);  
-     transition: transform 0.3s ease, opacity 0.4s ease;
+    transform: translateX(-10px);
+    transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
 .liabrary:hover .liabrary-svg {
-  opacity: 1;
-  transform: translateX(0);           
+    opacity: 1;
+    transform: translateX(0);
 }
-.create-container{
+
+.create-container {
     height: 72vh;
     overflow-y: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;     
-  -ms-overflow-style: none;  
-  overflow-y: scroll;   
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: scroll;
 }
-.songLists{
+
+.songLists {
     margin: 25px;
     list-style-type: none;
-   
+
 }
-.songLists li{
+
+.songLists li {
     margin-top: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
 }
-.songLists li img{
+
+.songLists li img {
     width: 30px;
 
 
 }
+
 .right {
     width: 76vw;
     flex-direction: column;
@@ -310,13 +317,13 @@ nav{
 .music-nav {
     display: flex;
     justify-content: space-between;
-    width: 100% ;
+    width: 100%;
     padding: 20px 35px;
 }
 
 .card-container {
     padding: 0 30px;
-    width: 100% ;
+    width: 100%;
 }
 
 .music-category {
@@ -370,12 +377,12 @@ nav{
     border: none;
     right: 10px;
     bottom: 60px;
-   
+
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
-z-index: 10;
+    z-index: 10;
 }
 
 .play-btn img {
@@ -394,7 +401,7 @@ z-index: 10;
 .play-btn:hover {
     cursor: pointer;
     box-shadow: 0px 4px 15px rgba(59, 223, 4, 0.745);
-   transform: translateY(0) scale(1.1);
+    transform: translateY(0) scale(1.1);
 }
 
 .card {
@@ -410,83 +417,110 @@ z-index: 10;
     overflow-y: auto;
     padding-right: 10px;
     scroll-behavior: smooth;
-    scrollbar-width: none;     
-  -ms-overflow-style: none;  
-  overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: scroll;
 }
-.footer{
+
+.footer {
     padding: 0 10px;
     width: 100vw;
     height: 10vh;
     justify-content: flex-end;
     gap: 5vw;
-   
+
 }
-.footerLeft{
+
+.footerLeft {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    
+
     width: 360px;
 }
-.footer-cover{
-    width: 50px; 
-    height: 50px; 
+
+.footer-cover {
+    width: 50px;
+    height: 50px;
     object-fit: cover;
 }
-.play-section{
+
+.play-section {
     width: 40vw;
     height: 10vh;
 
-    position:relative;
+    position: relative;
     flex-direction: column;
 
 }
 
 
-.play-section img{
+.play-section img {
     width: 24px;
     height: 24px;
-    
+
 
 }
-.play-pause{
+
+.play-pause {
     width: 34px;
     height: 34px;
-    background-color:#fbfbfb;
+    background-color: #fbfbfb;
     border-radius: 50px;
-    
+
 }
-.duration-line{
- width: 30vw;
- height: 3px;
- background-color: #5b5b5b;
- margin: 5px;
+
+.duration-line {
+    width: 30vw;
+    height: 3px;
+    background-color: #5b5b5b;
+    margin: 5px;
 }
-.play-setting{
+
+.duration-line input {
+    width: 30vw;
+    height: 3px;
+    cursor: pointer;
+}
+
+.play-setting {
     width: 200px;
 
 }
-.utiity-section{
+
+.utiity-section {
     width: 25vw;
     height: 10vh;
-   
+
     display: flex;
     justify-content: space-between;
-    align-items: center ;
+    align-items: center;
 }
-.utility-img{
-     width: 20px;
+
+.utility-img {
+    width: 20px;
     height: 20px;
     cursor: pointer;
 }
-.sound{
+
+.sound {
     width: 110px;
     height: 3px;
     background-color: #5b5b5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
-.song-item{
+
+#volume-range {
+    width: 110px;
+    height: 3px;
+    background-color: black;
+}
+
+.song-item {
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;

@@ -15,7 +15,6 @@ async function getSongs() {
     return songs;
 }
 
-
 let currentSongUrl = null;
 let isPlaying = false;
 let currentIndex = -1;
@@ -43,6 +42,18 @@ function updateFooter(songName) {
     footerMeta.textContent = "Album: Unknown";
 }
 
+function disablePlaybackUI() {
+    document.getElementById("volume-range").disabled = true;
+    const durationLine = document.querySelector(".not-playing");
+    if (durationLine) durationLine.style.display = "none";
+}
+
+function enablePlaybackUI() {
+    document.getElementById("volume-range").disabled = false;
+    const durationLine = document.querySelector(".not-playing");
+    if (durationLine) durationLine.style.display = "block";
+}
+
 function playSongAt(index) {
     if (index < 0 || index >= songsList.length) return;
 
@@ -62,8 +73,8 @@ function playSongAt(index) {
     const playPauseImg = document.querySelector(".play-pause img");
     playPauseImg.src = "pause.svg";
 
-
     updateFooter(formatSongName(songUrl));
+    enablePlaybackUI();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,7 +85,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const libraryBtn = document.querySelector(".liabrary");
     const leftSideBar = document.querySelector(".create-container");
     const suffleBtn = document.querySelector(".suffle");
+    const volumeSlider = document.getElementById("volume-range");
+    const muteIcon = document.querySelector("img[src='mute.svg']") || document.querySelector(".mute-icon");
+const durationSlider = document.querySelector(".not-playing");
+const playingTimeDisplay = document.querySelector(".playing-time p");
+const totalDurationDisplay = document.querySelector(".total-duration p");
 
+
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+
+window.audioPlayer.addEventListener("timeupdate", () => {
+    if (!isNaN(window.audioPlayer.duration)) {
+        const percent = (window.audioPlayer.currentTime / window.audioPlayer.duration) * 100;
+        durationSlider.value = percent;
+        playingTimeDisplay.textContent = formatTime(window.audioPlayer.currentTime);
+    }
+});
+
+
+window.audioPlayer.addEventListener("loadedmetadata", () => {
+    if (!isNaN(window.audioPlayer.duration)) {
+        totalDurationDisplay.textContent = formatTime(window.audioPlayer.duration);
+        durationSlider.disabled = false;
+    }
+});
+
+
+durationSlider.addEventListener("input", () => {
+    if (!isNaN(window.audioPlayer.duration)) {
+        const newTime = (durationSlider.value / 100) * window.audioPlayer.duration;
+        window.audioPlayer.currentTime = newTime;
+    }
+});
+
+
+function disableDurationLine() {
+    durationSlider.value = 0;
+    durationSlider.disabled = true;
+    playingTimeDisplay.textContent = "0:00";
+    totalDurationDisplay.textContent = "0:00";
+}
+
+
+
+window.audioPlayer.addEventListener("ended", () => {
+    disableDurationLine();
+});
+
+
+if (!window.audioPlayer.src) {
+    disableDurationLine();
+}
+
+
+    disablePlaybackUI();
+
+    window.audioPlayer.volume = 0.5;
+    volumeSlider.value = 50;
+    if (muteIcon) muteIcon.src = "volume.svg";
+
+    volumeSlider.addEventListener("input", () => {
+        window.audioPlayer.volume = volumeSlider.value / 100;
+        if (muteIcon) muteIcon.src = volumeSlider.value == 0 ? "mute.svg" : "volume.svg";
+    });
+
+    if (muteIcon) {
+        muteIcon.addEventListener("click", () => {
+            if (window.audioPlayer.volume > 0) {
+                window.audioPlayer.volume = 0;
+                volumeSlider.value = 0;
+                muteIcon.src = "mute.svg";
+            } else {
+                window.audioPlayer.volume = 0.5;
+                volumeSlider.value = 50;
+                muteIcon.src = "volume.svg";
+            }
+        });
+    }
 
     playPauseBtn.classList.add("disabled");
 
@@ -154,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 window.audioPlayer.addEventListener("ended", () => {
     if (currentIndex < songsList.length - 1) {
         playSongAt(currentIndex + 1);
@@ -166,5 +259,6 @@ window.audioPlayer.addEventListener("ended", () => {
         playPauseImg.src = "play.svg";
 
         updateFooter("No song playing");
+        disablePlaybackUI();
     }
 });
